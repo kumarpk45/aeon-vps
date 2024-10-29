@@ -138,12 +138,12 @@ class MirrorLeechListener:
 
     async def on_download_start(self):
         if config_dict["LEECH_LOG_ID"]:
-            msg = "<b>Task Started</b>\n\n"
-            msg += f"<b>• Task by:</b> {self.tag}\n"
-            msg += f"<b>• User ID: </b><code>{self.message.from_user.id}</code>"
+            msg = "<b>📌 Tᴀsᴋ Sᴛᴀʀᴛᴇᴅ ✔️</b>\n\n"
+            msg += f"<b>•⭐ Tᴀsᴋ ʙʏ:</b> {self.tag}\n"
+            msg += f"<b>•🆔 Usᴇʀ ɪᴅ: </b><code>{self.message.from_user.id}</code>"
             self.linkslogmsg = await sendCustomMsg(config_dict["LEECH_LOG_ID"], msg)
         self.botpmmsg = await sendCustomMsg(
-            self.message.from_user.id, "<b>Task started</b>"
+            self.message.from_user.id, "<b>Tᴀsᴋ Sᴛᴀʀᴛᴇᴅ</b>"
         )
 
     async def on_download_complete(self):
@@ -467,30 +467,30 @@ class MirrorLeechListener:
         user_id = self.message.from_user.id
         name, _ = await process_file(name, user_id, is_mirror=not self.is_leech)
         msg = f"{escape(name)}\n\n"
-        msg += f"<blockquote><b>• Size: </b>{get_readable_file_size(size)}\n"
-        msg += f"<b>• Elapsed: </b>{get_readable_time(time() - self.message.date.timestamp())}\n"
-        LOGGER.info(f"Task Done: {name}")
+        msg += f"<blockquote><b>•⚖️ Sɪᴢᴇ: </b>{get_readable_file_size(size)}\n"
+        msg += f"<b>🔹 Eʟᴀᴘsᴇᴅ: </b>{get_readable_time(time() - self.message.date.timestamp())}\n"
+        LOGGER.info(f"Tᴀsᴋ Dᴏɴᴇ: {name}")
         buttons = ButtonMaker()
         inboxButton = ButtonMaker()
-        inboxButton.callback("View in inbox", f"aeon {user_id} private", "header")
+        inboxButton.callback("📥 Vɪᴇᴡ Iɴ Iɴʙᴏx", f"aeon {user_id} private", "header")
         inboxButton = extra_btns(inboxButton)
         if self.is_leech:
             if folders > 1:
-                msg += f"<b>• Total files: </b>{folders}\n"
+                msg += f"<b>📂 Tᴏᴛᴀʟ Fɪʟᴇs: </b>{folders}\n"
             if mime_type != 0:
-                msg += f"<b>• Corrupted files: </b>{mime_type}\n"
-            msg += f"<b>• User ID: </b><code>{self.message.from_user.id}</code>\n"
-            msg += f"<b>• By: </b>{self.tag}</blockquote>\n\n"
+                msg += f"<b>🚩 Cᴏʀʀᴜᴘᴛᴇᴅ Fɪʟᴇs: </b>{mime_type}\n"
+            msg += f"<b>🆔 Usᴇʀ Iᴅ: </b><code>{self.message.from_user.id}</code>\n"
+            msg += f"<b>👤 Bʏ: </b>{self.tag}</blockquote>\n\n"
             if not files:
                 if self.isPrivate:
                     msg += (
-                        "<b>Files have not been sent for an unspecified reason</b>"
+                        "<b>ғɪʟᴇs ʜᴀᴠᴇ ɴᴏᴛ ʙᴇᴇɴ sᴇɴᴛ ғᴏʀ ᴀɴ ᴜɴsᴘᴇᴄɪғɪᴇᴅ ʀᴇᴀsᴏɴ</b>"
                     )
                 await send_message(self.message, msg)
             else:
                 attachmsg = True
                 fmsg, totalmsg = "\n\n", ""
-                lmsg = "<b>Files have been sent. Access them via the provided links.</b>"
+                lmsg = "<b>ғɪʟᴇs ʜᴀᴠᴇ ʙᴇᴇɴ sᴇɴᴛ. ᴀᴄᴄᴇss ᴛʜᴇᴍ ᴠɪᴀ ᴛʜᴇ ᴘʀᴏᴠɪᴅᴇᴅ ʟɪɴᴋs.</b>"
                 for index, (dlink, name) in enumerate(files.items(), start=1):
                     fmsg += f"{index}. <a href='{dlink}'>{name}</a>\n"
                     totalmsg = (msg + lmsg + fmsg) if attachmsg else fmsg
@@ -527,7 +527,7 @@ class MirrorLeechListener:
                 return
         else:
             if mime_type == "Folder":
-                msg += f"<b>• Total files: </b>{files}\n"
+                msg += f"<b>📂 Tᴏᴛᴀʟ Fɪʟᴇs: </b>{files}\n"
             if link:
                 buttons.url("Cloud link", link)
                 INDEX_URL = (
@@ -542,12 +542,12 @@ class MirrorLeechListener:
                 buttons = extra_btns(buttons)
                 button = buttons.column(2)
             elif rclonePath:
-                msg += f"<b>• Path: </b><code>{rclonePath}</code>\n"
+                msg += f"<b>📈 Pᴀᴛʜ: </b><code>{rclonePath}</code>\n"
                 button = None
                 buttons = extra_btns(buttons)
                 button = buttons.column(2)
-            msg += f"<b>• User ID: </b><code>{self.message.from_user.id}</code>\n"
-            msg += f"<b>• By: </b>{self.tag}</blockquote>\n\n"
+            msg += f"<b>🆔 Usᴇʀ Iᴅ: </b><code>{self.message.from_user.id}</code>\n"
+            msg += f"<b>👤 Bʏ: </b>{self.tag}</blockquote>\n\n"
 
             if config_dict["MIRROR_LOG_ID"]:
                 await sendMultiMessage(config_dict["MIRROR_LOG_ID"], msg, button)
@@ -558,7 +558,7 @@ class MirrorLeechListener:
             if self.isSuperGroup:
                 await send_message(
                     self.message,
-                    f"{msg} <b>Links has been sent to your inbox</b>",
+                    f"{msg} <b>ʟɪɴᴋs ʜᴀs ʙᴇᴇɴ sᴇɴᴛ ᴛᴏ ʏᴏᴜʀ ɪɴʙᴏx</b>",
                     inboxButton.column(1),
                 )
             else:
