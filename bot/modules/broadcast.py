@@ -58,12 +58,12 @@ async def broadcast(_, message):
 
 def generate_status(total, successful, blocked, unsuccessful, elapsed_time=""):
     status = "<b>Broadcast Stats :</b>\n\n"
-    status += f"<b>• Total users:</b> {total}\n"
-    status += f"<b>• Success:</b> {successful}\n"
-    status += f"<b>• Blocked or deleted:</b> {blocked}\n"
-    status += f"<b>• Unsuccessful attempts:</b> {unsuccessful}"
+    status += f"<b>👨‍💼 Tᴏᴛᴀʟ Usᴇʀs:</b> {total}\n"
+    status += f"<b>✅️ Sᴜᴄᴄᴇss:</b> {successful}\n"
+    status += f"<b>🔒 Bʟᴏᴄᴋᴇᴅ Oʀ Dᴇʟᴇᴛᴇᴅ:</b> {blocked}\n"
+    status += f"<b>👎 Uɴsᴜᴄᴄᴇssғᴜʟ Aᴛᴛᴇᴍᴘᴛs:</b> {unsuccessful}"
     if elapsed_time:
-        status += f"\n\n<b>Elapsed Time:</b> {elapsed_time}"
+        status += f"\n\n<b>🕒 ᴇʟᴀᴘsᴇᴅ ᴛɪᴍᴇ:</b> {elapsed_time}"
     return status
 
 
