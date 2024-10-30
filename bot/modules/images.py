@@ -87,7 +87,7 @@ async def pictures(_, message):
         await delete_message(to_edit)
         await send_message(
             message,
-            f"<b>Image No. : 1 / {len(IMAGES)}</b>",
+            f"<b>💡 Iᴍᴀɢᴇ ɴᴏ. : 1 / {len(IMAGES)}</b>",
             buttons.column(2),
             IMAGES[0],
         )
@@ -132,7 +132,7 @@ async def pics_callback(_, query):
 
         ind = int(data[3]) + 1
         ind = len(IMAGES) - abs(ind) if ind < 0 else ind
-        pic_info = f"<b>Image No. : {ind+1} / {len(IMAGES)}</b>"
+        pic_info = f"<b>💡 Iᴍᴀɢᴇ ɴᴏ. : {ind+1} / {len(IMAGES)}</b>"
         buttons = ButtonMaker()
         buttons.callback("<<", f"images {data[1]} turn {ind-1}")
         buttons.callback(">>", f"images {data[1]} turn {ind+1}")
