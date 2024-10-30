@@ -37,17 +37,17 @@ from bot.helper.mirror_leech_utils.upload_utils.gdriveTools import GoogleDriveHe
 
 handler_dict = {}
 fname_dict = {
-    "rcc": "RClone",
-    "prefix": "Prefix",
-    "suffix": "Suffix",
-    "remname": "Remname",
-    "ldump": "Dump",
-    "user_tds": "User Custom TDs",
-    "lcaption": "Caption",
-    "thumb": "Thumbnail",
-    "metadata": "Metadata",
-    "attachment": "Attachment",
-    "yt_opt": "YT-DLP Options",
+    "rcc": "RCʟᴏɴᴇ",
+    "prefix": "Pʀᴇғɪx",
+    "suffix": "Sᴜғғɪx",
+    "remname": "Rᴇᴍɴᴀᴍᴇ",
+    "ldump": "Dᴜᴍᴘ",
+    "user_tds": "Usᴇʀ Cᴜsᴛᴏᴍ TDs",
+    "lcaption": "Cᴀᴘᴛɪᴏɴ",
+    "thumb": "Tʜᴜᴍʙɴᴀɪʟ",
+    "metadata": "Mᴇᴛᴀᴅᴀᴛᴀ",
+    "attachment": "Aᴛᴛᴀᴄʜᴍᴇɴᴛ",
+    "yt_opt": "Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs",
 }
 
 
@@ -59,9 +59,9 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
     rclone_path = f"tanha/{user_id}.conf"
     user_dict = user_data.get(user_id, {})
     if key is None:
-        buttons.callback("Universal", f"userset {user_id} universal")
-        buttons.callback("Mirror", f"userset {user_id} mirror")
-        buttons.callback("Leech", f"userset {user_id} leech")
+        buttons.callback("Uɴɪᴠᴇʀsᴀʟ", f"userset {user_id} universal")
+        buttons.callback("Mɪʀʀᴏʀ", f"userset {user_id} mirror")
+        buttons.callback("Lᴇᴇᴄʜ", f"userset {user_id} leech")
         if user_dict and any(
             key in user_dict
             for key in [
@@ -78,12 +78,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
                 "attachment",
             ]
         ):
-            buttons.callback("Reset", f"userset {user_id} reset_all")
-        buttons.callback("Close", f"userset {user_id} close")
+            buttons.callback("Rᴇsᴇᴛ ↻", f"userset {user_id} reset_all")
+        buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close")
         text = f"<b>User Settings for {name}</b>"
         button = buttons.column(2)
     elif key == "universal":
-        buttons.callback("YT-DLP Options", f"userset {user_id} yt_opt")
+        buttons.callback("Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs", f"userset {user_id} yt_opt")
         ytopt = (
             "Not Exists"
             if (
@@ -92,43 +92,43 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             == ""
             else val
         )
-        buttons.callback("Prefix", f"userset {user_id} prefix")
+        buttons.callback("Pʀᴇғɪx", f"userset {user_id} prefix")
         prefix = user_dict.get("prefix", "Not Exists")
 
-        buttons.callback("Suffix", f"userset {user_id} suffix")
+        buttons.callback("Sᴜғғɪx", f"userset {user_id} suffix")
         suffix = user_dict.get("suffix", "Not Exists")
 
-        buttons.callback("Remname", f"userset {user_id} remname")
+        buttons.callback("Rᴇᴍɴᴀᴍᴇ", f"userset {user_id} remname")
         remname = user_dict.get("remname", "Not Exists")
 
-        buttons.callback("Metadata", f"userset {user_id} metadata")
+        buttons.callback("Mᴇᴛᴀᴅᴀᴛᴀ", f"userset {user_id} metadata")
         metadata = user_dict.get("metadata", "Not Exists")
 
-        buttons.callback("Attachment", f"userset {user_id} attachment")
+        buttons.callback("Aᴛᴛᴀᴄʜᴍᴇɴᴛ", f"userset {user_id} attachment")
         attachment = user_dict.get("attachment", "Not Exists")
 
-        text = f"<b>Universal Settings for {name}</b>\n\n"
-        text += f"<b>• YT-DLP Options:</b> <b><code>{ytopt}</code></b>\n"
-        text += f"<b>• Prefix:</b> <code>{prefix}</code>\n"
-        text += f"<b>• Suffix:</b> <code>{suffix}</code>\n"
-        text += f"<b>• Metadata:</b> <code>{metadata}</code>\n"
-        text += f"<b>• Attachment:</b> <code>{attachment}</code>\n"
-        text += f"<b>• Remname:</b> <code>{remname}</code>"
-        buttons.callback("Back", f"userset {user_id} back", "footer")
-        buttons.callback("Close", f"userset {user_id} close", "footer")
+        text = f"<b>Uɴɪᴠᴇʀsᴀʟ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
+        text += f"<b>┎▶ Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs:</b> <b><code>{ytopt}</code></b>\n"
+        text += f"<b>┠ Pʀᴇғɪx:</b> <code>{prefix}</code>\n"
+        text += f"<b>┠ Sᴜғғɪx:</b> <code>{suffix}</code>\n"
+        text += f"<b>┠ Mᴇᴛᴀᴅᴀᴛᴀ:</b> <code>{metadata}</code>\n"
+        text += f"<b>┠ Aᴛᴛᴀᴄʜᴍᴇɴᴛ:</b> <code>{attachment}</code>\n"
+        text += f"<b>┖▶ Rᴇᴍɴᴀᴍᴇ:</b> <code>{remname}</code>"
+        buttons.callback("⫷", f"userset {user_id} back", "footer")
+        buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
         button = buttons.column(2)
     elif key == "mirror":
-        buttons.callback("RClone", f"userset {user_id} rcc")
+        buttons.callback("RCʟᴏɴᴇ", f"userset {user_id} rcc")
         rccmsg = "Exists" if await aiopath.exists(rclone_path) else "Not Exists"
         tds_mode = "Enabled" if user_dict.get("td_mode") else "Disabled"
         buttons.callback("User TDs", f"userset {user_id} user_tds")
 
-        text = f"<b>Mirror Settings for {name}</b>\n\n"
-        text += f"<b>• Rclone Config:</b> {rccmsg}\n"
-        text += f"<b>• User TD Mode:</b> {tds_mode}"
+        text = f"<b>Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
+        text += f"<b>🔵 Rᴄʟᴏɴᴇ Cᴏɴғɪɢ:</b> {rccmsg}\n"
+        text += f"<b>👤 Usᴇʀ Tᴅ Mᴏᴅᴇ:</b> {tds_mode}"
 
-        buttons.callback("Back", f"userset {user_id} back", "footer")
-        buttons.callback("Close", f"userset {user_id} close", "footer")
+        buttons.callback("⫷", f"userset {user_id} back", "footer")
+        buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
         button = buttons.column(2)
     elif key == "leech":
         if (
@@ -175,17 +175,17 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         ldump = "Not Exists" if (val := user_dict.get("ldump", "")) == "" else val
 
         SPLIT_SIZE = "4GB" if IS_PREMIUM_USER else "2GB"
-        text = f"<b>Leech Settings for {name}</b>\n\n"
-        text += f"<b>• Leech split size:</b> {SPLIT_SIZE}\n"
-        text += f"<b>• Leech Type:</b> {ltype}\n"
-        text += f"<b>• Custom Thumbnail:</b> {thumbmsg}\n"
-        text += f"<b>• Media Group:</b> {media_group}\n"
-        text += f"<b>• Leech Caption:</b> <code>{escape(lcaption)}</code>\n"
-        text += f"<b>• Leech Dump:</b> <code>{ldump}</code>\n"
-        text += f"<b>• MediaInfo Mode:</b> <code>{mediainfo}</code>"
+        text = f"<b>Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
+        text += f"<b>┎▶Lᴇᴇᴄʜ Sᴘʟɪᴛ Sɪᴢᴇ:</b> {SPLIT_SIZE}\n"
+        text += f"<b>┠ Lᴇᴇᴄʜ Tʏᴘᴇ:</b> {ltype}\n"
+        text += f"<b>┠ Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ:</b> {thumbmsg}\n"
+        text += f"<b>┠ Mᴇᴅɪᴀ Gʀᴏᴜᴘ:</b> {media_group}\n"
+        text += f"<b>┠ Lᴇᴇᴄʜ Cᴀᴘᴛɪᴏɴ:</b> <code>{escape(lcaption)}</code>\n"
+        text += f"<b>┠ Lᴇᴇᴄʜ Dᴜᴍᴘ:</b> <code>{ldump}</code>\n"
+        text += f"<b>┖▶ Mᴇᴅɪᴀɪɴғᴏ Mᴏᴅᴇ:</b> <code>{mediainfo}</code>"
 
-        buttons.callback("Back", f"userset {user_id} back", "footer")
-        buttons.callback("Close", f"userset {user_id} close", "footer")
+        buttons.callback("⫷", f"userset {user_id} back", "footer")
+        buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
         button = buttons.column(2)
     elif edit_type:
         text = f"<b><u>{fname_dict[key]} Settings :</u></b>\n\n"
@@ -195,7 +195,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         elif key == "thumb":
             set_exist = await aiopath.exists(thumbpath)
             text += (
-                f"<b>Custom Thumbnail :</b> {'' if set_exist else 'Not'} Exists\n\n"
+                f"<b>Cᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ :</b> {'' if set_exist else 'Not'} Exists\n\n"
             )
         elif key == "yt_opt":
             set_exist = (
@@ -246,10 +246,10 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             )
         if set_exist and set_exist != "Not Exists":
             if key == "user_tds":
-                buttons.callback("Show", f"userset {user_id} show_tds", "header")
-            buttons.callback("Delete", f"userset {user_id} d{key}")
-        buttons.callback("Back", f"userset {user_id} back {edit_type}", "footer")
-        buttons.callback("Close", f"userset {user_id} close", "footer")
+                buttons.callback("Sʜᴏᴡ", f"userset {user_id} show_tds", "header")
+            buttons.callback("Dᴇʟᴇᴛᴇ", f"userset {user_id} d{key}")
+        buttons.callback("⫷", f"userset {user_id} back {edit_type}", "footer")
+        buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
         button = buttons.column(2)
     return text, button
 
@@ -261,7 +261,7 @@ async def update_user_settings(
     user_id = query.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = "https://graph.org/file/73ae908d18c6b38038071.jpg"
+        thumbnail = "https://envs.sh/_DR.jpg"
     await edit_message(query.message, msg, button, thumbnail)
 
 
@@ -271,7 +271,7 @@ async def user_settings(_, message):
     user_id = message.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = "https://graph.org/file/73ae908d18c6b38038071.jpg"
+        thumbnail = "https://envs.sh/_DR.jpg"
     x = await send_message(message, msg, button, thumbnail)
     await five_minute_del(message)
     await delete_message(x)
@@ -421,7 +421,7 @@ async def edit_user_settings(client, query):
     if data[2] == "show_tds":
         handler_dict[user_id] = False
         user_tds = user_dict.get("user_tds", {})
-        msg = "<b><u>User TD Details</u></b>\n\n"
+        msg = "<b><u>👤 Usᴇʀ Tᴅ Dᴇᴛᴀɪʟs</u></b>\n\n"
         for index_no, (drive_name, drive_dict) in enumerate(
             user_tds.items(), start=1
         ):
