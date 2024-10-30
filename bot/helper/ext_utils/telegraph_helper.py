@@ -12,8 +12,8 @@ class TelegraphHelper:
         self.telegraph = Telegraph(domain="graph.org")
         self.short_name = token_hex(4)
         self.access_token = None
-        self.author_name = "garuda"
-        self.author_url = "https://t.me/garudamirror"
+        self.author_name = "Tamil_Leech"
+        self.author_url = "https://t.me/Tamil_Leech"
 
     async def create_account(self):
         await self.telegraph.create_account(
@@ -62,15 +62,15 @@ class TelegraphHelper:
         for content in telegraph_content:
             if nxt_page == 1:
                 content += (
-                    f'<b><a href="https://telegra.ph/{path[nxt_page]}">Next</a></b>'
+                    f'<b><a href="https://telegra.ph/{path[nxt_page]}">⫸</a></b>'
                 )
                 nxt_page += 1
             else:
                 if prev_page <= num_of_path:
-                    content += f'<b><a href="https://telegra.ph/{path[prev_page]}">Prev</a></b>'
+                    content += f'<b><a href="https://telegra.ph/{path[prev_page]}">⫷</a></b>'
                     prev_page += 1
                 if nxt_page < num_of_path:
-                    content += f'<b> | <a href="https://telegra.ph/{path[nxt_page]}">Next</a></b>'
+                    content += f'<b> | <a href="https://telegra.ph/{path[nxt_page]}">⫸</a></b>'
                     nxt_page += 1
             await self.edit_page(
                 path=path[prev_page], title="Torrent Search", content=content
