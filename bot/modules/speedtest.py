@@ -31,10 +31,10 @@ async def speedtest(_, message):
         return
 
     string_speed = "<b>SPEEDTEST INFO</b>\n\n"
-    string_speed += f"<b>• Ping:</b> <code>{result.ping} ms</code>\n"
-    string_speed += f"<b>• Upload:</b> <code>{get_readable_file_size(result.upload / 8)}/s</code>\n"
-    string_speed += f"<b>• Download:</b> <code>{get_readable_file_size(result.download / 8)}/s</code>\n"
-    string_speed += f"<b>• IP Address:</b> <code>{result.client['ip']}</code>"
+    string_speed += f"<b>📶 Pɪɴɢ:</b> <code>{result.ping} ms</code>\n"
+    string_speed += f"<b>📤 Uᴘʟᴏᴀᴅ:</b> <code>{get_readable_file_size(result.upload / 8)}/s</code>\n"
+    string_speed += f"<b>📥 Dᴏᴡɴʟᴏᴀᴅ:</b> <code>{get_readable_file_size(result.download / 8)}/s</code>\n"
+    string_speed += f"<b>📡 Iᴘ Aᴅᴅʀᴇss:</b> <code>{result.client['ip']}</code>"
 
     try:
         await send_message(message, string_speed, photo=result.share())
