@@ -80,7 +80,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         ):
             buttons.callback("Rᴇsᴇᴛ ↻", f"userset {user_id} reset_all")
         buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close")
-        text = f"<b>User Settings for {name}</b>"
+        text = f"<b>Usᴇʀ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>"
         button = buttons.column(2)
     elif key == "universal":
         buttons.callback("Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs", f"userset {user_id} yt_opt")
@@ -108,12 +108,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         attachment = user_dict.get("attachment", "Not Exists")
 
         text = f"<b>Uɴɪᴠᴇʀsᴀʟ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
-        text += f"<b>┎▶ Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs:</b> <b><code>{ytopt}</code></b>\n"
+        text += f"<b>┎ Yᴛ-Dʟᴘ Oᴘᴛɪᴏɴs:</b> <b><code>{ytopt}</code></b>\n"
         text += f"<b>┠ Pʀᴇғɪx:</b> <code>{prefix}</code>\n"
         text += f"<b>┠ Sᴜғғɪx:</b> <code>{suffix}</code>\n"
         text += f"<b>┠ Mᴇᴛᴀᴅᴀᴛᴀ:</b> <code>{metadata}</code>\n"
         text += f"<b>┠ Aᴛᴛᴀᴄʜᴍᴇɴᴛ:</b> <code>{attachment}</code>\n"
-        text += f"<b>┖▶ Rᴇᴍɴᴀᴍᴇ:</b> <code>{remname}</code>"
+        text += f"<b>┖ Rᴇᴍɴᴀᴍᴇ:</b> <code>{remname}</code>"
         buttons.callback("⫷", f"userset {user_id} back", "footer")
         buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
         button = buttons.column(2)
@@ -121,7 +121,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.callback("RCʟᴏɴᴇ", f"userset {user_id} rcc")
         rccmsg = "Exists" if await aiopath.exists(rclone_path) else "Not Exists"
         tds_mode = "Enabled" if user_dict.get("td_mode") else "Disabled"
-        buttons.callback("User TDs", f"userset {user_id} user_tds")
+        buttons.callback("Usᴇʀ ᴛᴅs", f"userset {user_id} user_tds")
 
         text = f"<b>Mɪʀʀᴏʀ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
         text += f"<b>🔵 Rᴄʟᴏɴᴇ Cᴏɴғɪɢ:</b> {rccmsg}\n"
@@ -137,10 +137,10 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             and config_dict["AS_DOCUMENT"]
         ):
             ltype = "DOCUMENT"
-            buttons.callback("Send As Media", f"userset {user_id} doc")
+            buttons.callback("Sᴇɴᴅ As Mᴇᴅɪᴀ", f"userset {user_id} doc")
         else:
             ltype = "MEDIA"
-            buttons.callback("Send As Document", f"userset {user_id} doc")
+            buttons.callback("Sᴇɴᴅ As Dᴏᴄᴜᴍᴇɴᴛ", f"userset {user_id} doc")
 
         mediainfo = (
             "Enabled"
@@ -148,41 +148,41 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
             else "Disabled"
         )
         buttons.callback(
-            "Disable MediaInfo" if mediainfo == "Enabled" else "Enable MediaInfo",
+            "Dɪsᴀʙʟᴇ Mᴇᴅɪᴀɪɴғᴏ" if mediainfo == "Enabled" else "Eɴᴀʙʟᴇ Mᴇᴅɪᴀɪɴғᴏ",
             f"userset {user_id} mediainfo",
         )
         if config_dict["SHOW_MEDIAINFO"]:
             mediainfo = "Force Enabled"
-        buttons.callback("Thumbnail", f"userset {user_id} thumb")
+        buttons.callback("Tʜᴜᴍʙɴᴀɪʟ", f"userset {user_id} thumb")
         thumbmsg = "Exists" if await aiopath.exists(thumbpath) else "Not Exists"
 
         if user_dict.get("media_group", False) or (
             "media_group" not in user_dict and config_dict["MEDIA_GROUP"]
         ):
-            buttons.callback("Disable Media Group", f"userset {user_id} mgroup")
+            buttons.callback("Dɪsᴀʙʟᴇ Mᴇᴅɪᴀ Gʀᴏᴜᴘ", f"userset {user_id} mgroup")
         else:
-            buttons.callback("Enable Media Group", f"userset {user_id} mgroup")
+            buttons.callback("Eɴᴀʙʟᴇ Mᴇᴅɪᴀ Gʀᴏᴜᴘ", f"userset {user_id} mgroup")
         media_group = (
             "Enabled"
             if user_dict.get("media_group", config_dict.get("MEDIA_GROUP"))
             else "Disabled"
         )
 
-        buttons.callback("Leech Caption", f"userset {user_id} lcaption")
+        buttons.callback("Lᴇᴇᴄʜ Cᴀᴘᴛɪᴏɴ", f"userset {user_id} lcaption")
         lcaption = user_dict.get("lcaption", "Not Exists")
 
-        buttons.callback("Leech Dump", f"userset {user_id} ldump")
+        buttons.callback("Lᴇᴇᴄʜ Dᴜᴍᴘ", f"userset {user_id} ldump")
         ldump = "Not Exists" if (val := user_dict.get("ldump", "")) == "" else val
 
         SPLIT_SIZE = "4GB" if IS_PREMIUM_USER else "2GB"
         text = f"<b>Lᴇᴇᴄʜ Sᴇᴛᴛɪɴɢs Fᴏʀ {name}</b>\n\n"
-        text += f"<b>┎▶Lᴇᴇᴄʜ Sᴘʟɪᴛ Sɪᴢᴇ:</b> {SPLIT_SIZE}\n"
+        text += f"<b>┎Lᴇᴇᴄʜ Sᴘʟɪᴛ Sɪᴢᴇ:</b> {SPLIT_SIZE}\n"
         text += f"<b>┠ Lᴇᴇᴄʜ Tʏᴘᴇ:</b> {ltype}\n"
         text += f"<b>┠ Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟ:</b> {thumbmsg}\n"
         text += f"<b>┠ Mᴇᴅɪᴀ Gʀᴏᴜᴘ:</b> {media_group}\n"
         text += f"<b>┠ Lᴇᴇᴄʜ Cᴀᴘᴛɪᴏɴ:</b> <code>{escape(lcaption)}</code>\n"
         text += f"<b>┠ Lᴇᴇᴄʜ Dᴜᴍᴘ:</b> <code>{ldump}</code>\n"
-        text += f"<b>┖▶ Mᴇᴅɪᴀɪɴғᴏ Mᴏᴅᴇ:</b> <code>{mediainfo}</code>"
+        text += f"<b>┖ Mᴇᴅɪᴀɪɴғᴏ Mᴏᴅᴇ:</b> <code>{mediainfo}</code>"
 
         buttons.callback("⫷", f"userset {user_id} back", "footer")
         buttons.callback("Cʟᴏsᴇ ❌", f"userset {user_id} close", "footer")
