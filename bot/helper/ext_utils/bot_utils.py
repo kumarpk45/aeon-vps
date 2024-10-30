@@ -79,23 +79,23 @@ else:
     ]
 
 command_descriptions = {
-    "MirrorCommand": "- Start mirroring",
-    "LeechCommand": "- Start leeching",
-    "YtdlCommand": "- Mirror yt-dlp supported link",
-    "YtdlLeechCommand": "- Leech through yt-dlp supported link",
-    "CloneCommand": "- Copy file/folder to Drive",
-    "MediaInfoCommand": "- Get MediaInfo",
-    "CountCommand": "- Count file/folder on Google Drive.",
-    "ListCommand": "- Search in Drive",
-    "SearchCommand": "- Search in Torrent",
-    "UserSetCommand": "- User settings",
-    "StatusCommand": "- Get mirror status message",
-    "StatsCommand": "- Check Bot & System stats",
-    "StopAllCommand": "- Cancel all tasks added by you to the bot.",
-    "HelpCommand": "- Get detailed help",
-    "BotSetCommand": "- [ADMIN] Open Bot settings",
-    "LogCommand": "- [ADMIN] View log",
-    "RestartCommand": "- [ADMIN] Restart the bot",
+    "MirrorCommand": "- Sᴛᴀʀᴛ ᴍɪʀʀᴏʀɪɴɢ",
+    "LeechCommand": "- Sᴛᴀʀᴛ ʟᴇᴇᴄʜɪɴɢ",
+    "YtdlCommand": "- Mɪʀʀᴏʀ ʏᴛ-ᴅʟᴘ sᴜᴘᴘᴏʀᴛᴇᴅ ʟɪɴᴋ",
+    "YtdlLeechCommand": "- Lᴇᴇᴄʜ ᴛʜʀᴏᴜɢʜ ʏᴛ-ᴅʟᴘ sᴜᴘᴘᴏʀᴛᴇᴅ ʟɪɴᴋ",
+    "CloneCommand": "- Cᴏᴘʏ ғɪʟᴇ/ғᴏʟᴅᴇʀ ᴛᴏ ᴅʀɪᴠᴇ",
+    "MediaInfoCommand": "- Gᴇᴛ ᴍᴇᴅɪᴀɪɴғᴏ",
+    "CountCommand": "- Cᴏᴜɴᴛ ғɪʟᴇ/ғᴏʟᴅᴇʀ ᴏɴ ɢᴏᴏɢʟᴇ ᴅʀɪᴠᴇ.",
+    "ListCommand": "- Sᴇᴀʀᴄʜ ɪɴ ᴅʀɪᴠᴇ",
+    "SearchCommand": "- Sᴇᴀʀᴄʜ ɪɴ ᴛᴏʀʀᴇɴᴛ",
+    "UserSetCommand": "- Usᴇʀ sᴇᴛᴛɪɴɢs",
+    "StatusCommand": "- Gᴇᴛ ᴍɪʀʀᴏʀ sᴛᴀᴛᴜs ᴍᴇssᴀɢᴇ",
+    "StatsCommand": "- Cʜᴇᴄᴋ ʙᴏᴛ & sʏsᴛᴇᴍ sᴛᴀᴛs",
+    "StopAllCommand": "- Cᴀɴᴄᴇʟ ᴀʟʟ ᴛᴀsᴋs ᴀᴅᴅᴇᴅ ʙʏ ʏᴏᴜ ᴛᴏ ᴛʜᴇ ʙᴏᴛ.",
+    "HelpCommand": "- Gᴇᴛ ᴅᴇᴛᴀɪʟᴇᴅ ʜᴇʟᴘ",
+    "BotSetCommand": "- [ADMIN] Oᴘᴇɴ ʙᴏᴛ sᴇᴛᴛɪɴɢs",
+    "LogCommand": "- [ADMIN] Vɪᴇᴡ ʟᴏɢ",
+    "RestartCommand": "- [ADMIN] Rᴇsᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ",
 }
 
 
@@ -110,18 +110,18 @@ STATUS_LIMIT = 4
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading"
-    STATUS_DOWNLOADING = "Downloading"
-    STATUS_CLONING = "Cloning"
-    STATUS_QUEUEDL = "DL queued"
-    STATUS_QUEUEUP = "UL queued"
-    STATUS_PAUSED = "Paused"
-    STATUS_ARCHIVING = "Archiving"
-    STATUS_EXTRACTING = "Extracting"
-    STATUS_SPLITTING = "Splitting"
-    STATUS_CHECKING = "CheckUp"
-    STATUS_SEEDING = "Seeding"
-    STATUS_PROCESSING = "Processing"
+    STATUS_UPLOADING = "Uᴘʟᴏᴀᴅɪɴɢ"
+    STATUS_DOWNLOADING = "Dᴏᴡɴʟᴏᴀᴅɪɴɢ"
+    STATUS_CLONING = "Cʟᴏɴɪɴɢ"
+    STATUS_QUEUEDL = "Dʟ ǫᴜᴇᴜᴇᴅ"
+    STATUS_QUEUEUP = "Uʟ ǫᴜᴇᴜᴇᴅ"
+    STATUS_PAUSED = "Pᴀᴜsᴇᴅ"
+    STATUS_ARCHIVING = "Aʀᴄʜɪᴠɪɴɢ"
+    STATUS_EXTRACTING = "Exᴛʀᴀᴄᴛɪɴɢ"
+    STATUS_SPLITTING = "Sᴘʟɪᴛᴛɪɴɢ"
+    STATUS_CHECKING = "Cʜᴇᴄᴋᴜᴘ"
+    STATUS_SEEDING = "Sᴇᴇᴅɪɴɢ"
+    STATUS_PROCESSING = "Pʀᴏᴄᴇssɪɴɢ"
 
 
 class SetInterval:
@@ -249,7 +249,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = "<b>Powered by GarudaMirror</b>\n\n"
+    msg = "<b>𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐑𝐢𝐲𝐚 𝐗 𝐋𝐞𝐞𝐜𝐡</b>\n\n"
     button = None
     tasks = len(download_dict)
     current_time = get_readable_time(time() - bot_start_time)
@@ -273,32 +273,32 @@ def get_readable_message():
         ]:
             msg += f"<blockquote><code>{progress_bar(download.progress())}</code> {download.progress()}"
             msg += f"\n{download.processed_bytes()} of {download.size()}"
-            msg += f"\nSpeed: {download.speed()}"
-            msg += f"\nEstimated: {download.eta()}"
+            msg += f"\n🚀 Sᴘᴇᴇᴅ: {download.speed()}"
+            msg += f"\n⏳ Esᴛɪᴍᴀᴛᴇᴅ: {download.eta()}"
             if hasattr(download, "seeders_num"):
                 with contextlib.suppress(Exception):
-                    msg += f"\nSeeders: {download.seeders_num()} | Leechers: {download.leechers_num()}"
+                    msg += f"\n♾️ Sᴇᴇᴅᴇʀs: {download.seeders_num()} | Leechers: {download.leechers_num()}"
         elif download.status() == MirrorStatus.STATUS_SEEDING:
-            msg += f"<blockquote>Size: {download.size()}"
-            msg += f"\nSpeed: {download.upload_speed()}"
-            msg += f"\nUploaded: {download.uploaded_bytes()}"
-            msg += f"\nRatio: {download.ratio()}"
-            msg += f"\nTime: {download.seeding_time()}"
+            msg += f"<blockquote>⚖️ Sɪᴢᴇ: {download.size()}"
+            msg += f"\n┠🚀 Sᴘᴇᴇᴅ: {download.upload_speed()}"
+            msg += f"\n┠📤 Uᴘʟᴏᴀᴅᴇᴅ: {download.uploaded_bytes()}"
+            msg += f"\n┠📊 Rᴀᴛɪᴏ: {download.ratio()}"
+            msg += f"\n┠⏰ Tɪᴍᴇ: {download.seeding_time()}"
         else:
-            msg += f"<blockquote>Size: {download.size()}"
-        msg += f"\nElapsed: {get_readable_time(time() - download.message.date.timestamp())}</blockquote>"
+            msg += f"<blockquote>⚙️ Sɪᴢᴇ: {download.size()}"
+        msg += f"\n🔹 Eʟᴀᴘsᴇᴅ: {get_readable_time(time() - download.message.date.timestamp())}</blockquote>"
         msg += f"\n<blockquote>/stop_{download.gid()[:8]}</blockquote>\n\n"
     if len(msg) == 0:
         return None, None
     if tasks > STATUS_LIMIT:
         buttons = ButtonMaker()
-        buttons.callback("Prev", "status pre")
+        buttons.callback("⫷", "status pre")
         buttons.callback(f"{PAGE_NO}/{PAGES}", "status ref")
-        buttons.callback("Next", "status nex")
+        buttons.callback("⫸", "status nex")
         button = buttons.column(3)
-    msg += f"<b>• Tasks</b>: {tasks}{bmax_task}"
-    msg += f"\n<b>• Bot uptime</b>: {current_time}"
-    msg += f"\n<b>• Free disk space</b>: {get_readable_file_size(disk_usage('/usr/src/app/downloads/').free)}"
+    msg += f"<b>📌 Tᴀsᴋs</b>: {tasks}{bmax_task}"
+    msg += f"\n<b>🤖 Bᴏᴛ Uᴘᴛɪᴍᴇ</b>: {current_time}"
+    msg += f"\n<b>🌿 Fʀᴇᴇ Dɪsᴋ Sᴘᴀᴄᴇ</b>: {get_readable_file_size(disk_usage('/usr/src/app/downloads/').free)}"
     return msg, button
 
 
